@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL="http://127.0.0.1:8000/inventory/"
+URL="https://pharmacy-fastapi-backend.onrender.com/inventory/"
 
 med_names=("Paracetamol" "Ibuprofen" "Amoxicillin" "Azithromycin" "Cetirizine" "Metformin" "Aspirin" "Dolo" "Pantoprazole" "Atorvastatin")
 categories=("Tablet" "Capsule" "Syrup" "Injection")
