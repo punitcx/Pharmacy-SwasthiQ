@@ -62,7 +62,7 @@
   background-color: white;
   color: black;
   padding: 10px;
-  border-radius: 18px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -71,7 +71,7 @@
   background-color: lightgrey;
   color: black;
   padding: 10px;
-  border-radius: 18px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
 }

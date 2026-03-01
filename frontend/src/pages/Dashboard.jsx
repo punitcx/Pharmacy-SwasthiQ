@@ -48,7 +48,7 @@ function Dashboard() {
   
     return (
         <div className="dashboard-container">
-          <h1>Pharmacy CRM</h1>
+          <h2>Pharmacy CRM</h2>
           <h3> Manage inventory, sales and purchase orders </h3>
       		<div className="dashboard-cards">
 	      	  <div className="dashboard-card">
