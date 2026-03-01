@@ -1,11 +1,90 @@
-Pharmacy Electronic Medical Records System- My SwasthiQ SDE Intern Assignment
-Frontend: https://pharmacy-punit.netlify.app/
-Backend: https://pharmacy-fastapi-backend.onrender.com/
-Repository Structure
+# Pharmacy EMR System - SwasthiQ SDE Intern Assignment
+- Frontend: https://pharmacy-punit.netlify.app/
+- Backend: https://pharmacy-fastapi-backend.onrender.com/
 
--Pharmacy-SwasthiQ/
+<h1>Pharmacy SwasthiQ – Pharmacy CRM System</h1>
+
+<h2>Repository Structure</h2>
+
+<p>This repository contains a complete full-stack implementation with clear separation between backend and frontend.</p>
+
+<pre>
+Pharmacy-SwasthiQ/
 │
 ├── backend/
 ├── frontend/
 ├── LICENSE
 └── README.md
+</pre>
+
+<hr>
+
+<h2>Backend (FastAPI – Python)</h2>
+
+<p>The backend is implemented using FastAPI for REST API development, SQLAlchemy for ORM-based database interaction, Pydantic for validation, and PostgreSQL as the database. The database URL is configured using environment variables for deployment.</p>
+
+<h3>Backend Folder Structure</h3>
+
+<pre>
+backend/
+│
+├── main.py
+├── database.py
+├── models.py
+├── schemas.py
+├── crud.py
+├── requirements.txt
+├── generate_inventory.sh
+│
+└── routers/
+    ├── dashboard.py
+    └── inventory.py
+</pre>
+
+<ul>
+<li><strong>main.py</strong> – Entry point of the FastAPI application. Initializes the app and includes API routers.</li>
+<li><strong>database.py</strong> – Handles database connection setup using SQLAlchemy with environment variable configuration.</li>
+<li><strong>models.py</strong> – Defines database tables and ORM models.</li>
+<li><strong>schemas.py</strong> – Contains Pydantic models for request validation and structured API responses.</li>
+<li><strong>crud.py</strong> – Contains core business logic and database operations. The logic to check and update medicine status, reduce stock after sales, and maintain consistency is written here. All update operations are handled through controlled transactional sessions.</li>
+<li><strong>routers/dashboard.py</strong> – Defines dashboard-related endpoints such as total sales, items sold, low stock, purchase summary, and recent sales.</li>
+<li><strong>routers/inventory.py</strong> – Defines inventory-related endpoints to list, add, update, and manage medicines.</li>
+<li><strong>generate_inventory.sh</strong> – Script to seed the database with sample medicine data for demonstration and testing.</li>
+</ul>
+
+<hr>
+
+<h2>Frontend (React – Vite)</h2>
+
+<p>The frontend is developed using React and Vite. React Router DOM is used for routing and navigation. The frontend communicates with the backend using a configurable environment variable for the API base URL.</p>
+
+<h3>Frontend Folder Structure</h3>
+
+<pre>
+frontend/
+│
+├── src/
+│   ├── App.jsx
+│   ├── config.js
+│   ├── main.jsx
+│   ├── pages/
+│   │   ├── Dashboard.jsx
+│   │   ├── Inventory.jsx
+│   │   ├── RecentSalesSection.jsx
+│   │   └── respective CSS files
+</pre>
+
+<ul>
+<li><strong>App.jsx</strong> – Contains main routing logic for the application.</li>
+<li><strong>config.js</strong> – Stores backend base URL using the <code>VITE_API_URL</code> environment variable.</li>
+<li><strong>Dashboard.jsx</strong> – Displays dashboard overview cards and provides toggle navigation between Sales and Inventory views.</li>
+<li><strong>Inventory.jsx</strong> – Displays inventory overview and complete medicine list with status indicators and update functionality.</li>
+<li><strong>RecentSalesSection.jsx</strong> – Displays recent sales data fetched from the backend.</li>
+<li>Each page has its respective CSS file for layout and styling consistency.</li>
+</ul>
+
+<hr>
+
+<h2>Medicine Status and Update Logic</h2>
+
+<p>The logic to determine and update medicine status such as Active, Low Stock, Expired, or Out of Stock is implemented in <strong>crud.py</strong>. This file contains the main business logic that recalculates medicine status based on quantity and expiry date and ensures consistent updates when inventory changes occur through API operations.</p>
