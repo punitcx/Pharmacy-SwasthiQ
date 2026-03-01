@@ -1,8 +1,11 @@
-CREATE DATABASE pharmacy_db OWNER pharmacy_user;
-CREATE USER pharmacy_user WITH PASSWORD 'swasthiQ';
-ALTER ROLE pharmacy_user SET client_encoding TO 'utf8';
-ALTER ROLE pharmacy_user SET default_transaction_isolation TO 'read committed';
-ALTER ROLE pharmacy_user SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE pharmacy_db TO pharmacy_user;
-ALTER SCHEMA public OWNER TO pharmacy_user;
-\q
+Pharmacy Electronic Medical Records System- My SwasthiQ SDE Intern Assignment
+Frontend: https://pharmacy-punit.netlify.app/
+Backend: https://pharmacy-fastapi-backend.onrender.com/
+Repository Structure
+
+-Pharmacy-SwasthiQ/
+│
+├── backend/
+├── frontend/
+├── LICENSE
+└── README.md
