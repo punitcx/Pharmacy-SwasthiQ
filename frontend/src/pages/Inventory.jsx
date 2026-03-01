@@ -1,3 +1,4 @@
+import API_URL from "../config.js"
 import "./Inventory.css"
 import { useState, useEffect } from 'react'
 
@@ -38,14 +39,14 @@ function Inventory() {
 
   if (editingId) {
     // UPDATE
-    res = await fetch(`http://localhost:8000/inventory/${editingId}`, {
+    res = await fetch(`${API_URL}/inventory/${editingId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     })
   } else {
     // CREATE
-    res = await fetch("http://localhost:8000/inventory/", {
+    res = await fetch(`${API_URL}/inventory/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -100,8 +101,8 @@ function Inventory() {
   
   useEffect(() => {
           Promise.all([
-		fetch("http://localhost:8000/inventory/overview").then(res => res.json()),
-		fetch("http://localhost:8000/inventory/").then(res => res.json())
+		fetch(`${API_URL}/inventory/overview`).then(res => res.json()),
+		fetch(`${API_URL}/inventory/`).then(res => res.json())
 	])
           .then(([overview, medicines]) => {
 		  setData({

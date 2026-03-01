@@ -1,3 +1,4 @@
+import API_URL from "../config.js"
 import "./Dashboard.css"
 import RecentSalesSection from "./RecentSalesSection.jsx"
 import Inventory from "./Inventory.jsx";
@@ -7,14 +8,16 @@ function Dashboard() {
   const [activeTab, setActiveTab] = useState("sales");
   const [data, setData] = useState(0)
   const [error, setError] = useState(0)
+  
+  console.log("API_URL:", API_URL);
 
   useEffect(() => {
           Promise.all([
-		fetch("http://localhost:8000/dashboard/total-sales").then(res => res.json()),
-		fetch("http://localhost:8000/dashboard/items-sold").then(res => res.json()),
-		fetch("http://localhost:8000/dashboard/low-stock").then(res => res.json()),
-		fetch("http://localhost:8000/dashboard/purchase-orders").then(res => res.json()),
-		fetch("http://localhost:8000/dashboard/recent-sales").then(res => res.json())
+		fetch(`${API_URL}/dashboard/total-sales`).then(res => res.json()),
+		fetch(`${API_URL}/dashboard/items-sold`).then(res => res.json()),
+		fetch(`${API_URL}/dashboard/low-stock`).then(res => res.json()),
+		fetch(`${API_URL}/dashboard/purchase-orders`).then(res => res.json()),
+		fetch(`${API_URL}/dashboard/recent-sales`).then(res => res.json())
 	])
           .then(([sales, itemsSold, lowStock, purchase, recentSales]) => {
 		  setData({
