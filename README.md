@@ -6,9 +6,90 @@
 <img width="1799" height="814" alt="image" src="https://github.com/user-attachments/assets/36d2bf8a-fd06-486c-8d12-1e494f014231" />
 <img width="1809" height="1061" alt="image" src="https://github.com/user-attachments/assets/403b5346-c92e-46cf-bdd5-0365c062649e" />
 <img width="1730" height="931" alt="image" src="https://github.com/user-attachments/assets/00a81c1d-e406-46dd-8aea-b15535d753b2" />
-<h2>Repository Structure</h2>
+<h2>REST API Structure</h2>
 
-<p>This repository contains a complete full-stack implementation with clear separation between backend and frontend.</p>
+<p>The APIs are mainly classified into two categories: <strong>Inventory</strong> and <strong>Dashboard</strong>.</p>
+
+<h3>Inventory APIs</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>/inventory/overview</td>
+      <td>Inventory Overview</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/inventory/</td>
+      <td>List Medicines</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/inventory/</td>
+      <td>Add Medicine</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>/inventory/{medicine_id}</td>
+      <td>Update Medicine</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Dashboard APIs</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST</td>
+      <td>/dashboard/make-sale</td>
+      <td>Make Sale</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/dashboard/total-sales</td>
+      <td>Get Sales Summary</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/dashboard/items-sold</td>
+      <td>Get Items Sold</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/dashboard/recent-sales</td>
+      <td>Get Recent Sales</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/dashboard/low-stock</td>
+      <td>Get Low Stock</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/dashboard/purchase-orders</td>
+      <td>Get Purchase Orders</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<h2>Repository Structure</h2>
 
 <pre>
 Pharmacy-SwasthiQ/
@@ -54,6 +135,10 @@ backend/
 <li><strong>generate_inventory.sh</strong> – Script to seed the database with sample medicine data for demonstration and testing.</li>
 </ul>
 
+<h2>Medicine Status and Update Logic</h2>
+
+<p>The logic to determine and update medicine status such as Active, Low Stock, Expired, or Out of Stock is implemented in <strong>crud.py</strong>. This file contains the main business logic that recalculates medicine status based on quantity and expiry date and ensures consistent updates when inventory changes occur through API operations.</p>
+
 <hr>
 
 <h2>Frontend (React – Vite)</h2>
@@ -85,8 +170,3 @@ frontend/
 <li>Each page has its respective CSS file for layout and styling consistency.</li>
 </ul>
 
-<hr>
-
-<h2>Medicine Status and Update Logic</h2>
-
-<p>The logic to determine and update medicine status such as Active, Low Stock, Expired, or Out of Stock is implemented in <strong>crud.py</strong>. This file contains the main business logic that recalculates medicine status based on quantity and expiry date and ensures consistent updates when inventory changes occur through API operations.</p>
