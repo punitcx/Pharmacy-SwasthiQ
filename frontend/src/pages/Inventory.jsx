@@ -157,12 +157,6 @@ function Inventory() {
   <input name="supplier" placeholder="Supplier"
     value={form.supplier} onChange={handleChange} required />
 
-  <select name="status" value={form.status} onChange={handleChange}>
-    <option value="Active">Active</option>
-    <option value="Low Stock">Low Stock</option>
-    <option value="Expired">Expired</option>
-  </select>
-
   <button type="submit">
   {editingId ? "Update Medicine" : "Add Medicine"}
 </button>

@@ -1,3 +1,4 @@
+import recentSalesIcon from "../assets/recent_sales.png"
 function SalesSection({ recentSales }) {
   return (
   	<>
@@ -6,6 +7,7 @@ function SalesSection({ recentSales }) {
 		  <table className="recent-sales-table">
 		    <thead>
 		      <tr>
+			<th></th>
 			<th>Sale ID</th>
 			<th>Customer Name</th>
 			<th>Quantity</th>
@@ -18,6 +20,7 @@ function SalesSection({ recentSales }) {
 		    <tbody>
 		      {recentSales.recent_sales.map((sale) => (
 			<tr key={sale.id}>
+			  <td><img src={recentSalesIcon} width="80" height="40"/></td>
 			  <td>{sale.sale_id}</td>	
 			  <td>{sale.cust_name}</td>
 			  <td>{sale.quantity_sold}</td>

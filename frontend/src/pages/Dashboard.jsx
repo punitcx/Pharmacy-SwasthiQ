@@ -1,5 +1,9 @@
 import API_URL from "../config.js"
 import "./Dashboard.css"
+import cashIcon from "../assets/cash.jpg"
+import cartIcon from "../assets/cart.jpeg"
+import lowStockIcon from "../assets/low_stock.png"
+import purchaseOrdersIcon from "../assets/purchase_orders.jpeg"
 import RecentSalesSection from "./RecentSalesSection.jsx"
 import Inventory from "./Inventory.jsx";
 import { useState, useEffect } from 'react'
@@ -48,36 +52,41 @@ function Dashboard() {
           <h3> Manage inventory, sales and purchase orders </h3>
       		<div className="dashboard-cards">
 	      	  <div className="dashboard-card">
+	      	      	<img src={cashIcon} width="40" height="40" />
 	      		<p>₹{data.sales.total_sales}</p>
 			<h3>Today's Sales</h3>
 	      	  </div>
 
 	      	  <div className="dashboard-card">
+	      	  	<img src={cartIcon} width="40" height="40" />
 		        <p>{data.itemsSold.total_items_sold}</p>
 		        <h3>Items Sold Today</h3>
 		  </div>
 
 	      	  <div className="dashboard-card">
+	      	  	<img src={lowStockIcon} width="40" height="40" />
 		        <p>{data.lowStock.low_stock}</p>
 		        <h3>Low Stock Items</h3>
 		  </div>
 
 	      	  <div className="dashboard-card">
+	      	  	<img src={purchaseOrdersIcon} width="40" height="40" />
 		        <p>{data.purchase.purchase_orders}</p>
 		        <h3>Purchase Orders</h3>
 		  </div>
 
 	</div>
+	<div className="toggle-container">
 	<div className="toggle-buttons">
 	  <button
-	    className={activeTab === "sales" ? "active-btn" : ""}
+	    className={activeTab === "sales" ? "active-btn" : "inactive-btn"}
 	    onClick={() => setActiveTab("sales")}
 	  >
 	    Sales
 	  </button>
 
 	  <button
-	    className={activeTab === "inventory" ? "active-btn" : ""}
+	    className={activeTab === "inventory" ? "active-btn" : "inactive-btn"}
 	    onClick={() => setActiveTab("inventory")}
 	  >
 	    Inventory
@@ -94,6 +103,7 @@ function Dashboard() {
 	    <Inventory/>
 	  </>
 	)}
+	</div>
 	</div>
   )
 

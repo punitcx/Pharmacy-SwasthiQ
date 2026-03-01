@@ -1,6 +1,6 @@
 .dashboard-container {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
   min-height: 100vh;
   color: black;
 }
@@ -17,7 +17,7 @@
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.2s ease;
 }
 
@@ -34,6 +34,45 @@
 .dashboard-card p {
   margin-top: 10px;
   font-size: 22px;
+  font-weight: bold;
+}
+
+.toggle-container {
+  color: black;
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+.toggle-buttons{
+  display:flex;
+  gap: 20px;
+  background-color: lightgrey;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.active-btn {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.inactive-btn {
+  background-color: lightgrey;
+  color: black;
+  padding: 10px;
+  border-radius: 18px;
+  cursor: pointer;
   font-weight: bold;
 }
 
