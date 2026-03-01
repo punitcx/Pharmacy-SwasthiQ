@@ -1,9 +1,11 @@
-# Pharmacy EMR System - SwasthiQ SDE Intern Assignment
+# Pharmacy EMR System - SwasthiQ (SDE Intern Assignment)
 - Frontend: https://pharmacy-punit.netlify.app/
 - Backend: https://pharmacy-fastapi-backend.onrender.com/
+- Screenshots (As of 02 March 2026, 3:51 PM IST)
 
-<h1>Pharmacy SwasthiQ – Pharmacy CRM System</h1>
-
+<img width="1799" height="814" alt="image" src="https://github.com/user-attachments/assets/36d2bf8a-fd06-486c-8d12-1e494f014231" />
+<img width="1809" height="1061" alt="image" src="https://github.com/user-attachments/assets/403b5346-c92e-46cf-bdd5-0365c062649e" />
+<img width="1730" height="931" alt="image" src="https://github.com/user-attachments/assets/00a81c1d-e406-46dd-8aea-b15535d753b2" />
 <h2>Repository Structure</h2>
 
 <p>This repository contains a complete full-stack implementation with clear separation between backend and frontend.</p>
@@ -20,8 +22,8 @@ Pharmacy-SwasthiQ/
 <hr>
 
 <h2>Backend (FastAPI – Python)</h2>
-
 <p>The backend is implemented using FastAPI for REST API development, SQLAlchemy for ORM-based database interaction, Pydantic for validation, and PostgreSQL as the database. The database URL is configured using environment variables for deployment.</p>
+Swagger UI for testing: https://pharmacy-fastapi-backend.onrender.com/docs
 
 <h3>Backend Folder Structure</h3>
 
