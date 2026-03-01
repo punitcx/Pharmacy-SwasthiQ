@@ -43,7 +43,7 @@ function Dashboard() {
   }
 
   if(!data){
-    return <p>Loading...</p>
+    return <p>Loading... (Kindly wait for 50-60 secs as it is hosted with a free plan...</p>
   }
   
     return (
