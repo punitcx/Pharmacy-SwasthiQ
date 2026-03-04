@@ -2,7 +2,7 @@ import API_URL from "../config.js"
 import "./Inventory.css"
 import { useState, useEffect } from 'react'
 
-function Inventory() {
+function Inventory({showForm}) {
   const [data, setData] = useState(0)
   const [error, setError] = useState(0)
   const [medicines, setMedicines] = useState([])
@@ -126,42 +126,47 @@ function Inventory() {
   
     return (
         <div className="inventory-container">
-      	<h2>Add Medicine</h2>
+        {showForm && (
+        <div className="medicine-form-container">
+      		<h2>Add Medicine</h2>
 
-<form className="medicine-form" onSubmit={handleSubmit}>
+		<form className="medicine-form" onSubmit={handleSubmit}>
 
-  <input name="med_name" placeholder="Medicine Name"
-    value={form.med_name} onChange={handleChange} required />
+		  <input name="med_name" placeholder="Medicine Name"
+		    value={form.med_name} onChange={handleChange} required />
 
-  <input name="gen_name" placeholder="Generic Name"
-    value={form.gen_name} onChange={handleChange} required />
+		  <input name="gen_name" placeholder="Generic Name"
+		    value={form.gen_name} onChange={handleChange} required />
 
-  <input name="category" placeholder="Category (Tablet/Syrup)"
-    value={form.category} onChange={handleChange} required />
+		  <input name="category" placeholder="Category (Tablet/Syrup)"
+		    value={form.category} onChange={handleChange} required />
 
-  <input name="batch_no" placeholder="Batch Number"
-    value={form.batch_no} onChange={handleChange} required />
+		  <input name="batch_no" placeholder="Batch Number"
+		    value={form.batch_no} onChange={handleChange} required />
 
-  <input type="date" name="expiry_date"
-    value={form.expiry_date} onChange={handleChange} required />
+		  <input type="date" name="expiry_date"
+		    value={form.expiry_date} onChange={handleChange} required />
 
-  <input type="number" name="quantity" placeholder="Quantity"
-    value={form.quantity} onChange={handleChange} required />
+		  <input type="number" name="quantity" placeholder="Quantity"
+		    value={form.quantity} onChange={handleChange} required />
 
-  <input type="number" name="cost_price" placeholder="Cost Price"
-    value={form.cost_price} onChange={handleChange} required />
+		  <input type="number" name="cost_price" placeholder="Cost Price"
+		    value={form.cost_price} onChange={handleChange} required />
 
-  <input type="number" name="mrp" placeholder="MRP"
-    value={form.mrp} onChange={handleChange} required />
+		  <input type="number" name="mrp" placeholder="MRP"
+		    value={form.mrp} onChange={handleChange} required />
 
-  <input name="supplier" placeholder="Supplier"
-    value={form.supplier} onChange={handleChange} required />
+		  <input name="supplier" placeholder="Supplier"
+		    value={form.supplier} onChange={handleChange} required />
 
-  <button type="submit">
-  {editingId ? "Update Medicine" : "Add Medicine"}
-</button>
-</form>
-
+		  <button type="submit">
+		  {editingId ? "Update Medicine" : "Add Medicine"}
+		</button>
+		</form>
+	  </div>
+	  )}
+	  
+	  <div className="overview-container">
           <h2>Inventory Overview</h2>
 		<div className="overview-section">
 	      	  <div className="overview-card">
@@ -184,7 +189,7 @@ function Inventory() {
 		        <p>₹{data.overview.total_inventory_value}</p>
 		  </div>
 		</div>
-	
+	  </div>
 	  <h2>Complete Inventory</h2>
 
 		  <table className="inventory-table"> 

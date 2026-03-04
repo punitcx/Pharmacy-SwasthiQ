@@ -3,7 +3,7 @@ import recentSalesIcon from "../assets/recent_sales.png"
 import {useState} from 'react'
 
 
-function SalesSection({ recentSales }) {
+function SalesSection({ recentSales, showForm }) {
 const [form, setForm] = useState({
   cust_name: "",
   quantity_sold: "",
@@ -56,7 +56,9 @@ const handleSubmit = async (e) => {
 
 return (
   <div className="sales-container">
-      	<h2>Make Sale</h2>
+      	{showForm && (
+      	<div className="sale-form-container">
+      	<h2>Make a Sale</h2>
 
 	<form className="sale-form" onSubmit={handleSubmit}>
 
@@ -69,13 +71,15 @@ return (
 	  <input type="number" name="quantity_sold" placeholder="Quantity"
 	    value={form.quantity_sold} onChange={handleChange} required />
 
-	  <input name="payment_type" placeholder="Payment_Type"
+	  <input name="payment_type" placeholder="Payment Type"
 	    value={form.payment_type} onChange={handleChange} required />
 
 	  <button type="submit">
 	  Make Sale
 	</button>
 	</form>
+	</div>
+	)}
 		  <h2>Recent Sales</h2>
 
 		  <table className="recent-sales-table">

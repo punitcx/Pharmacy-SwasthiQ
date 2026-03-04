@@ -12,17 +12,22 @@
   margin-bottom: 20px;
 }
 
-.overview-section {
-  display: flex;
-  gap: 20px;
+.overview-container{
+  margin-top: 30px;
   margin-bottom: 30px;
-  color: black;
-  flex: 1;
-  background: lightblue;
+  border-color: #C8FFF5;
+  background-color: #EAFEFD;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.2s ease;
+}
+
+.overview-section {
+  display: flex;
+  color: black;
+  flex: 1;
+  
 }
 
 .overview-card {
@@ -119,6 +124,13 @@
 .edit-btn:hover {
   background-color: #4338ca;
 }
+.medicine-form-container {
+	background-color: #EAFEFD;
+	border-color: #C8FFF5;
+	border-radius:10px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	padding:10px;
+}
 
 .medicine-form {
   display: grid;
@@ -130,7 +142,7 @@
 .medicine-form input,
 .medicine-form select {
   color: black;
-  background-color: #edfcf2;
+  background-color: white;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;

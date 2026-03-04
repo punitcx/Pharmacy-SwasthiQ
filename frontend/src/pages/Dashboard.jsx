@@ -9,6 +9,8 @@ import Inventory from "./Inventory.jsx";
 import { useState, useEffect } from 'react'
 
 function Dashboard() {
+  const [showSaleForm, setShowSaleForm] = useState(false);
+  const [showMedForm, setShowMedForm] = useState(false);
   const [activeTab, setActiveTab] = useState("sales");
   const [data, setData] = useState(0)
   const [error, setError] = useState(0)
@@ -48,8 +50,16 @@ function Dashboard() {
   
     return (
         <div className="main-container">
-          <h2>Pharmacy CRM</h2>
-          <h3> Manage inventory, sales and purchase orders </h3>
+		<h2>Pharmacy CRM</h2>
+        <div className="top-section">
+		<div>
+			<h3> Manage inventory, sales and purchase orders </h3>
+		</div>
+		<div className="top-right-buttons">
+	  		<button className="export-full-btn" onClick="">Export</button>
+	  		<button className="add-medicine-btn" onClick={() => setShowMedForm(prev => !prev)}>+ Add Medicine</button>
+		</div>
+        </div>
       		<div className="dashboard-cards">
 	      	  <div className="dashboard-card">
 	      	      	<img src={cashIcon} width="40" height="40" />
@@ -78,29 +88,37 @@ function Dashboard() {
 	</div>
 	<div className="toggle-container">
 	<div className="toggle-buttons">
-	  <button
-	    className={activeTab === "sales" ? "active-btn" : "inactive-btn"}
-	    onClick={() => setActiveTab("sales")}
-	  >
-	    Sales
-	  </button>
-
-	  <button
-	    className={activeTab === "inventory" ? "active-btn" : "inactive-btn"}
-	    onClick={() => setActiveTab("inventory")}
-	  >
-	    Inventory
-	  </button>
+		<div className="left-buttons">
+		  <button
+		    className={activeTab === "sales" ? "active-btn" : "inactive-btn"}
+		    onClick={() => setActiveTab("sales")}
+		  >
+		    Sales
+		  </button>
+		  <button className="inactive-btn">Purchase</button>
+		  <button
+		    className={activeTab === "inventory" ? "active-btn" : "inactive-btn"}
+		    onClick={() => setActiveTab("inventory")}
+		  >
+		    Inventory
+		  </button>
+	  	</div>
+	  	
+	  	<div className="right-buttons">
+	  		<button className="new-sale-btn" onClick={() => setShowSaleForm(prev => !prev)}>+ New Sale</button>
+	  		<button className="new-purchase-btn" onClick="">+ New Purchase</button>
+		</div>
+	  
 	</div>
 	{activeTab === "sales" && (
 	  <>	  
-	    <RecentSalesSection recentSales={data.recentSales} />
+	    <RecentSalesSection recentSales={data.recentSales} showForm={showSaleForm}/>
 	  </>
 	)}
 	
 	{activeTab === "inventory" && (
 	  <>
-	    <Inventory/>
+	    <Inventory showForm={showMedForm}/>
 	  </>
 	)}
 	</div>
