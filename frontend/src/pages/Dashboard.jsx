@@ -43,7 +43,7 @@ function Dashboard() {
   }
 
   if(!data){
-    return <p>Loading...</p>
+    return <p>Loading... (Should be live in 50-60 secs)</p>
   }
   
     return (
