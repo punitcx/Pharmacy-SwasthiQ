@@ -1,4 +1,4 @@
-.dashboard-container {
+.main-container {
   padding-left: 80px;
   padding-right: 80px;
   min-height: 100vh;
@@ -74,6 +74,38 @@
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.sale-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.sale-form input,
+.sale-form select {
+  color: black;
+  background-color: #edfcf2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.sale-form button {
+  grid-column: span 1;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sale-form button:hover {
+  background-color: #059669;
 }
 
 .recent-sales-table {

@@ -1,7 +1,80 @@
 import recentSalesIcon from "../assets/recent_sales.png"
+import {useState} from 'react'
+
+
 function SalesSection({ recentSales }) {
-  return (
-  	<>
+const [form, setForm] = useState({
+  cust_name: "",
+  quantity_sold: "",
+  selling_price: "",
+  payment_type: ""
+})
+  const handleChange = (e) => {
+  setForm({
+    ...form,
+    [e.target.name]: e.target.value
+  })
+}
+
+const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  const payload = {
+    ...form,
+    cust_name: form.cust_name,
+    quantity_sold: Number(form.quantity_sold),
+    selling_price: Number(form.selling_price),
+    payment_type: form.payment_type
+  }
+
+  let res
+  
+  res = await fetch(`${API_URL}/make_sale`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+  
+  if (res.ok) {
+    const saleMade = await res.json()
+
+    /*setRecentSales(
+        recentSales.recent_sales.map((sale) =>
+          sale.id === editingId ? updatedMedicine : med
+        )
+      )*/
+
+    setForm({
+      	cust_name: "",
+  	quantity_sold: "",
+	selling_price: "",
+	payment_type: ""
+    })
+  }
+}
+
+return (
+  <div className="sales-container">
+      	<h2>Make Sale</h2>
+
+	<form className="sale-form" onSubmit={handleSubmit}>
+
+	  <input name="cust_name" placeholder="Customer Name"
+	    value={form.cust_name} onChange={handleChange} required />
+
+	  <input type="number" name="selling_price" placeholder="Selling Price"
+	    value={form.selling_price} onChange={handleChange} required />
+
+	  <input type="number" name="quantity_sold" placeholder="Quantity"
+	    value={form.quantity_sold} onChange={handleChange} required />
+
+	  <input name="payment_type" placeholder="Payment_Type"
+	    value={form.payment_type} onChange={handleChange} required />
+
+	  <button type="submit">
+	  Make Sale
+	</button>
+	</form>
 		  <h2>Recent Sales</h2>
 
 		  <table className="recent-sales-table">
@@ -32,7 +105,7 @@ function SalesSection({ recentSales }) {
 		      ))}
 		    </tbody>
 		  </table>
-	  </>
+		</div>
 	);
 }
 
