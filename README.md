@@ -1,5 +1,7 @@
 # Pharmacy EMR System - SwasthiQ (SDE Intern Assignment)
-- Live Frontend: https://pharmacy-punit.netlify.app/
+- Live Frontend (Both are same):
+  - https://pharmacy.punit-chau20.workers.dev/ (CloudFlare)
+  - https://pharmacy-punit.netlify.app/ (Netlify)
 - Backend: https://pharmacy-fastapi-backend.onrender.com/
 - Screenshots (As of 02 March 2026, 3:51 PM IST)
 
