@@ -1,3 +1,4 @@
+import API_URL from "../config.js"
 import recentSalesIcon from "../assets/recent_sales.png"
 import {useState} from 'react'
 
@@ -29,7 +30,7 @@ const handleSubmit = async (e) => {
 
   let res
   
-  res = await fetch(`${API_URL}/make_sale`, {
+  res = await fetch(`${API_URL}/dashboard/make-sale`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
