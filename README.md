@@ -5,9 +5,10 @@
 - Backend: https://pharmacy-fastapi-backend.onrender.com/
 - Screenshots (As of 02 March 2026, 3:51 PM IST)
 
-<img width="1799" height="814" alt="image" src="https://github.com/user-attachments/assets/36d2bf8a-fd06-486c-8d12-1e494f014231" />
-<img width="1809" height="1061" alt="image" src="https://github.com/user-attachments/assets/403b5346-c92e-46cf-bdd5-0365c062649e" />
-<img width="1730" height="931" alt="image" src="https://github.com/user-attachments/assets/00a81c1d-e406-46dd-8aea-b15535d753b2" />
+<img width="1781" height="1030" alt="image" src="https://github.com/user-attachments/assets/12d5d664-a799-40e8-ae9e-8cdbe68958a9" />
+<img width="1781" height="1028" alt="image" src="https://github.com/user-attachments/assets/9fdca4dc-bcc9-4847-9d6b-25b6e03145ab" />
+<img width="1781" height="1023" alt="image" src="https://github.com/user-attachments/assets/bbd4bcc2-cb37-4f80-92a9-330e53214cd6" />
+
 <h2>REST API Structure</h2>
 
 <p>The APIs are mainly classified into two categories: <strong>Inventory</strong> and <strong>Dashboard</strong>.</p>
