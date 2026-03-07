@@ -3,7 +3,7 @@
   - https://pharmacy.punit-chau20.workers.dev/ (CloudFlare)
   - https://pharmacy-punit.netlify.app/ (Netlify)
 - Backend: https://pharmacy-fastapi-backend.onrender.com/
-- Screenshots (As of 02 March 2026, 3:51 PM IST)
+- Screenshots (As of 05 March 2026)
 
 <img width="1781" height="1030" alt="image" src="https://github.com/user-attachments/assets/12d5d664-a799-40e8-ae9e-8cdbe68958a9" />
 <img width="1781" height="1028" alt="image" src="https://github.com/user-attachments/assets/9fdca4dc-bcc9-4847-9d6b-25b6e03145ab" />
